@@ -1,0 +1,236 @@
+{
+    "comment":"服务包：服务类：接口名称：[函数声明，函数返回类型，函数参数]",
+    "accessservices":{
+        "AccessInfoQueryService":{
+            "getPONIfPhyStatus":["String getPONIfPhyStatus();", "String", ""],
+            "getPONIfUpTime":["int getPONIfUpTime();", "int", ""],
+            "getPONIfRegisterStatus":["String getPONIfRegisterStatus();", "String", ""],
+            "getUplinkIfStats":["String getUplinkIfStats();", "String", ""],
+            "getWANIfList":["String getWANIfList();", "String", ""],
+            "getWANIfStats":["String getWANIfStats(int wanIndex);", "String", "int wanIndex"],
+            "getWANIfInfo":["String getWANIfInfo(int wanIndex);", "String", "int wanIndex"],
+            "getWanIfBandwidth":["String getWanIfBandwidth(int wanIndex);", "String", "int wanIndex"],
+            "getWANIfStatus":["String getWANIfStatus(int wanIndex);", "String", "int wanIndex"],
+            "getInternetWANIndex":["int getInternetWANIndex();", "int", ""]
+        },
+        "WanConfigService":{
+            "addWANIf":["int addWANIf(String VLANMode, String VLANIDMark, String ConnectionType);", "int", "String VLANMode, String VLANIDMark, String ConnectionType"],
+            "setWANIf":["int setWANIf(int wanIndex, String setParameter);", "int", "int wanIndex, String setParameter"],
+            "deleteWANIf":["int deleteWANIf(int wanIndex);", "int", "int wanIndex"]
+        },
+        "IPPingDiagnosticsService":{
+            "startIPPingDiagnostics":["int startIPPingDiagnostics(int wanIndex, String host, String pingParameter);", "int", "int wanIndex, String host, String pingParameter"],
+            "getIPPingDiagnosticsResult":["String getIPPingDiagnosticsResult();", "String", ""]
+        },
+        "TraceRouteDiagnosticsService":{
+            "startTraceRouteDiagnostics":["int startTraceRouteDiagnostics(int wanIndex, String host, String traceRouterParameter);", "int", "int wanIndex, String host, String traceRouterParameter"],
+            "getTraceRouteDiagnosticsResult":["String getTraceRouteDiagnosticsResult();", "String", ""]
+        }
+    },
+    "transferservices":{
+        "TransferQueryService":{
+            "getVLANBindInfo":["String getVLANBindInfo();", "String", ""],
+            "getLayer3ForwardingStaticConfigInfo":["String getLayer3ForwardingStaticConfigInfo();", "String", ""],
+            "getIPv6Layer3ForwardingStaticConfigInfo":["String getIPv6Layer3ForwardingStaticConfigInfo();", "String", ""],
+            "getLayer3ForwardingCurrent":["String getLayer3ForwardingCurrent();", "String", ""],
+            "getIPv6Layer3ForwardingCurrent":["String getIPv6Layer3ForwardingCurrent();", "String", ""],
+            "getIPTVStatus":["String getIPTVStatus();", "String", ""]
+        },
+        "VLANBindConfigService":{
+            "setVLANBind":["int setVLANBind(String lanInterface, String bind);", "int", "String lanInterface, String bind"],
+            "clearVLANBind":["int clearVLANBind(String lanInterface);", "int", "String lanInterface"]
+        },
+        "StaticLayer3ForwardingConfigService":{
+            "addLayer3ForwardingStatic":["int addLayer3ForwardingStatic(String DestIPAddress, String DestSubnetMask, String GatewayIPAddress, String Interface);", "int", "String DestIPAddress, String DestSubnetMask, String GatewayIPAddress, String Interface"],
+            "deleteLayer3ForwardingStatic":["int deleteLayer3ForwardingStatic(String DestIPPrefix, String NextHop, String Interface);", "int", "String DestIPPrefix, String NextHop, String Interface"],
+            "addIPv6Layer3ForwardingStatic":["int addIPv6Layer3ForwardingStatic(int index);", "int", "int index"],
+            "deleteIPv6Layer3ForwardingStatic":["int deleteIPv6Layer3ForwardingStatic(int index);", "int", "int index"]
+        },
+        "TrafficMonitoringConfigService":{
+            "addTrafficMonitoringDestAddress":["int addTrafficMonitoringDestAddress(String[] destAddressList, BundleContext context);", "int", "String[] destAddressList, BundleContext context"],
+            "deleteTrafficMonitoringDestAddress":["int deleteTrafficMonitoringDestAddress(String[] destAddressList, BundleContext context);", "int", "String[] destAddressList, BundleContext context"],
+            "getTrafficMonitoringDestAddressInfo":["String getTrafficMonitoringDestAddressInfo();", "String", ""]
+        },
+        "TrafficQoSService":{
+            "addTrafficToFlow":["int addTrafficToFlow(String remoteAddress, String remotePort, int flow);", "int", "String remoteAddress, String remotePort, int flow"],
+            "deleteTrafficFromFlow":["int deleteTrafficFromFlow(String remoteAddress, String remotePort, int flow);", "int", "String remoteAddress, String remotePort, int flow"],
+            "deleteAllTrafficFromFlow":["int deleteAllTrafficFromFlow(int flow);", "int", "int flow"],
+            "getTrafficInfoByFlow":["String getTrafficInfoByFlow(int flow);", "String", "int flow"],
+            "getStatsByFlow":["String getStatsByFlow(int flow);", "String", "int flow"],
+            "getSpeedByFlow":["String getSpeedByFlow(int flow);", "String", "int flow"],
+            "setSpeedLimitByFlow":["int setSpeedLimitByFlow(int flow, int upSpeed, int downSpeed);", "int", "int flow, int upSpeed, int downSpeed"],
+            "getSpeedLimitByFlow":["String getSpeedLimitByFlow(int flow);", "String", "int flow"],
+            "setDSCPRemarkByFlow":["int setDSCPRemarkByFlow(int flow, int remarkDSCP);", "int", "int flow, int remarkDSCP"],
+            "getDSCPRemarkByFlow":["int getDSCPRemarkByFlow(int flow);", "int", "int flow"]
+        },
+        "TrafficFowardService":{
+            "addForwardRule":["int addForwardRule(String remoteAddress, String remotePort, String protocol, String hostMAC, String forwardToIP, int forwardToPort);", "int", "String remoteAddress, String remotePort, String protocol, String hostMAC, String forwardToIP, int forwardToPort"],
+            "deleteForwardRule":["int deleteForwardRule(int ruleNum);", "int", "int ruleNum"],
+            "deleteAllForwardRule":["int deleteAllForwardRule();", "int", ""],
+            "getForwardRuleInfo":["String getForwardRuleInfo();", "String", ""]
+        },
+        "TrafficMirrorService":{
+            "addMirrorRule":["int addMirrorRule(String remoteAddress, String remotePort, String direction, String protocol, String hostMAC, String mirrorToIP, int mirrorToPort);", "int", "String remoteAddress, String remotePort, String direction, String protocol, String hostMAC, String mirrorToIP, int mirrorToPort"],
+            "deleteMirrorRule":["int deleteMirrorRule(int ruleNum);", "int", "int ruleNum"],
+            "deleteAllMirrorRule":["int deleteAllMirrorRule();", "int", ""],
+            "getMirroRuleInfo":["String getMirroRuleInfo();", "String", ""]
+        },
+        "TrafficDetailProcessService":{
+            "addHTTPTrafficProcessRule":["int addHTTPTrafficProcessRule(String remoteAddress, int remotePort, String direction, String hostMAC, String[] methodList, String[] statuscodeList, String[] headerList, BundleContext context);", "int", "String remoteAddress, int remotePort, String direction, String hostMAC, String[] methodList, String[] statuscodeList, String[] headerList, BundleContext context"],
+            "deleteHTTPTrafficProcessRule":["int deleteHTTPTrafficProcessRule(int ruleNum);", "int", "int ruleNum"],
+            "deleteAllHTTPTrafficProcessRule":["int deleteAllHTTPTrafficProcessRule();", "int", ""],
+            "getHTTPTrafficProcessRuleInfo":["String getHTTPTrafficProcessRuleInfo();", "String", ""]
+        }
+    },
+    "lanservices":{
+        "LANHostsInfoQueryService":{
+            "getGatewayName":["String getGatewayName();", "String", ""],
+            "getLANHostInfoByMAC":["String getLANHostInfoByMAC(String[] hostMAC);", "String", "String[] hostMAC"],
+            "getLANHostInfoByInterface":["String getLANHostInfoByInterface(String ConnectInterface);", "String", "String ConnectInterface"],
+            "getMacFilterMode":["int getMacFilterMode();", "int", ""],
+            "getLANHostInfoByClass":["String getLANHostInfoByClass(String hostClass);", "String", "String hostClass"],
+            "getLANHostStats":["String getLANHostStats(String[] hostMAC);", "String", "String[] hostMAC"],
+            "getLANHostSpeedLimitInfo":["String getLANHostSpeedLimitInfo(String[] hostMAC);", "String", "String[] hostMAC"]
+        },
+        "LanNetworkNameConfigService":{
+            "setGatewayName":["int setGatewayName(String name);", "int", "String name"],
+            "setLANHostName":["int setLANHostName(String hostMAC, String hostName);", "int", "String hostMAC, String hostName"]
+        },
+        "LanHostSpeedLimitService":{
+            "setLANHostSpeedLimit":["int setLANHostSpeedLimit(String hostMAC, int upSpeed, int downSpeed);", "int", "String hostMAC, int upSpeed, int downSpeed"]
+        },
+        "LanHostSpeedQueryService":{
+            "getLANHostSpeed":["String getLANHostSpeed(String hostMAC);", "String", "String hostMAC"]
+        },
+        "LanNetworkAccessConfigService":{
+            "setMacFilterMode":["int setMacFilterMode(int mode);", "int", "int mode"],
+            "addLANHostToBlackList":["int addLANHostToBlackList(String[] hostMAC);", "int", "String[] hostMAC"],
+            "deleteLANHostFromBlackList":["int deleteLANHostFromBlackList(String[] hostMAC);", "int", "String[] hostMAC"],
+            "addLANHostToStorageBlackList":["int addLANHostToStorageBlackList(String hostMAC);", "int", "String hostMAC"],
+            "deleteLANHostFromStorageBlackList":["int deleteLANHostFromStorageBlackList(String[] hostMAC);", "int", "String[] hostMAC"],
+            "addLANHostToTrustList":["int addLANHostToTrustList(String[] hostMAC);", "int", "String[] hostMAC"],
+            "deleteLANHostFromTrustList":["int deleteLANHostFromTrustList(String[] hostMAC);", "int", "String[] hostMAC"]
+        },
+        "WlanQueryService":{
+            "getWLANSSIDInfo":["String getWLANSSIDInfo(int ssidIndex);", "String", "int ssidIndex"],
+            "getWLANSSIDStats":["String getWLANSSIDStats(int ssidIndex);", "String", "int ssidIndex"],
+            "getWLANWPSStatus":["int getWLANWPSStatus(int ssidIndex);", "int", "int ssidIndex"],
+            "getWLANHardwareSwitch":["boolean getWLANHardwareSwitch(String radioType);", "boolean", "String radioType"],
+            "getWLANRadioInfo":["String getWLANRadioInfo(String radioType);", "String", "String radioType"],
+            "getWLANNeighbor":["String getWLANNeighbor(String radioType);", "String", "String radioType"],
+            "getWLANHostInfo":["String getWLANHostInfo(String[] hostMAC);", "String", "String[] hostMAC"],
+            "getGuestSSIDInfo":["String getGuestSSIDInfo();", "String", ""]
+        },
+        "WlanSecretQueryService":{
+            "getWLANSSIDPassword":["String getWLANSSIDPassword(int ssidIndex);", "String", "int ssidIndex"]
+        },
+        "WlanConfigService":{
+            "setWLANSSIDSwitch":["int setWLANSSIDSwitch(int ssidIndex, boolean enable);", "int", "int ssidIndex, boolean enable"],
+            "setWLANSSIDSecurity":["int setWLANSSIDSecurity(int ssidIndex, String encryptionMode, String password);", "int", "int ssidIndex, String encryptionMode, String password"],
+            "setWLANSSIDAdvertisement":["int setWLANSSIDAdvertisement(int ssidIndex, boolean SSIDAdvertisementEnabled);", "int", "int ssidIndex, boolean SSIDAdvertisementEnabled"],
+            "setWLANHardwareSwitch":["int setWLANHardwareSwitch(String radioType, boolean Switch);", "int", "String radioType, boolean Switch"],
+            "setWLANStandard":["int setWLANStandard(String radioType, String standard);", "int", "String radioType, String standard"],
+            "setWLANRadioChannel":["int setWLANRadioChannel(String radioType, int channel);", "int", "String radioType, int channel"],
+            "setWLANRadioPower":["int setWLANRadioPower(String radioType, int transmitPower);", "int", "String radioType, int transmitPower"],
+            "setWLANRadioFrequencyWidth":["int setWLANRadioFrequencyWidth(String radioType, String frequencyWidth);", "int", "String radioType, String frequencyWidth"],
+            "startWLANWPS":["int startWLANWPS(int ssidIndex);", "int", "int ssidIndex"],
+            "stopWLANWPS":["int stopWLANWPS(int ssidIndex);", "int", "int ssidIndex"],
+            "addWLANGuestSSID":["int addWLANGuestSSID(int guestSsidIndex);", "int", "int guestSsidIndex"],
+            "deleteWLANGuestSSID":["int deleteWLANGuestSSID(int guestSsidIndex);", "int", "int guestSsidIndex"],
+            "setWLANGuestPortIsolation":["int setWLANGuestPortIsolation(int guestSsidIndex, boolean portIsolation);", "int", "int guestSsidIndex, boolean portIsolation"],
+            "setWLANGuestDuration":["int setWLANGuestDuration(int guestSsidIndex, int duration);", "int", "int guestSsidIndex, int duration"]
+        },
+        "EthQueryService":{
+            "getLANEthernetInfo":["String getLANEthernetInfo(int portIndex);", "String", "int portIndex"],
+            "getLANEthernetStats":["String getLANEthernetStats(int portIndex);", "String", "int portIndex"]
+        },
+        "EthConfigService":{
+            "setLANEthernetEnable":["int setLANEthernetEnable(int portIndex, boolean enable);", "int", "int portIndex, boolean enable"],
+            "setLANEthernetMaxBitRate":["int setLANEthernetMaxBitRate(int portIndex, String maxBitRate);", "int", "int portIndex, String maxBitRate"],
+            "setLANEthernetDuplexMode":["int setLANEthernetDuplexMode(int portIndex, String duplexMode);", "int", "int portIndex, String duplexMode"]
+        }
+    },
+    "addressservices":{
+        "LANIPInfoQueryService":{
+            "getLANHostIP":["String getLANHostIP();", "String", ""],
+            "getLANDHCPInfo":["String getLANDHCPInfo();", "String", ""]
+        },
+        "LANIPConfigService":{
+            "setLANHostIP":["int setLANHostIP(String localIP, String submask);", "int", "String localIP, String submask"],
+            "setLANDHCPInfo":["int setLANDHCPInfo(String enableDHCPServer, String DHCPStartIP, String DHCPEndIP, int DHCPDuration);", "int", "String enableDHCPServer, String DHCPStartIP, String DHCPEndIP, int DHCPDuration"]
+        },
+        "PortMappingQueryService":{
+            "getPortMappingInfo":["String getPortMappingInfo();", "String", ""]
+        },
+        "PortMappingConfigService":{
+            "addPortMapping":["int addPortMapping(int wanIndex, int externalPort, int internalPort, String portMappingProtocol, String internalClient);", "int", "int wanIndex, int externalPort, int internalPort, String portMappingProtocol, String internalClient"],
+            "deletePortMapping":["int deletePortMapping(int wanIndex, int portMappingIndex);", "int", "int wanIndex, int portMappingIndex"],
+            "setPortMappingSwitch":["int setPortMappingSwitch(int wanIndex, int portMappingIndex, boolean Switch);", "int", "int wanIndex, int portMappingIndex, boolean Switch"]
+        }
+    },
+    "voipservices":{
+        "VoIPInfoQueryService":{
+            "getPOTSInfo":["String getPOTSInfo();", "String", ""]
+        },
+        "VoIPInfoSubscribeService":{
+            "subscribeVoIPEvent":["int subscribeVoIPEvent(BundleContext context, String[] Event);", "int", "BundleContext context, String[] Event"],
+            "unSubscribeVoIPEvent":["int unSubscribeVoIPEvent(BundleContext context, String[] Event);", "int", "BundleContext context, String[] Event"]
+        }
+    },
+    "commservices":{
+        "DeviceInfoQueryService":{
+            "getDeviceInfo":["String getDeviceInfo();", "String", ""],
+            "getDeviceMAC":["String getDeviceMAC();", "String", ""],
+            "getDeviceUpTime":["int getDeviceUpTime();", "int", ""],
+            "getOSGiInfo":["String getOSGiInfo();", "String", ""],
+            "getJVMInfo":["String getJVMInfo();", "String", ""],
+            "getAPIVersion":["String getAPIVersion();", "String", ""],
+            "getCPUOccupancyRate":["int getCPUOccupancyRate();", "int", ""],
+            "getRAMOccupancyRate":["int getRAMOccupancyRate();", "int", ""]
+        },
+        "DeviceSecretInfoQueryService":{
+            "getDeviceManufacturerOUI":["String getDeviceManufacturerOUI();", "String", ""],
+            "getDeviceSerialNumber":["String getDeviceSerialNumber();", "String", ""],
+            "getDeviceDefaultWebPassword":["String getDeviceDefaultWebPassword();", "String", ""],
+            "getDeviceDefaultSSID1Name":["String getDeviceDefaultSSID1Name();", "String", ""],
+            "getDeviceDefaultSSID1Password":["String getDeviceDefaultSSID1Password();", "String", ""],
+            "getDevicePassword":["String getDevicePassword();", "String", ""]
+        },
+        "DeviceAccessRightQueryService":{
+            "getFTPRightInfo":["String getFTPRightInfo();", "String", ""],
+            "getSambaRightInfo":["String getSambaRightInfo();", "String", ""],
+            "getHTTPRightInfo":["String getHTTPRightInfo();", "String", ""]
+        },
+        "DeviceAccessRightConfigService":{
+            "setFTPRight":["int setFTPRight(int right, boolean anonymous);", "int", "int right, boolean anonymous"],
+            "setSambaRight":["int setSambaRight(int right, boolean anonymous);", "int", "int right, boolean anonymous"],
+            "setHTTPRight":["int setHTTPRight(int right);", "int", "int right"],
+            "addFTPAccount":["int addFTPAccount(String username, String password);", "int", "String username, String password"],
+            "deleteFTPAccount":["int deleteFTPAccount(String username);", "int", "String username"],
+            "deleteAllFTPAccount":["int deleteAllFTPAccount();", "int", ""],
+            "addSambaAccount":["int addSambaAccount(String username, String password);", "int", "String username, String password"],
+            "deleteSambaAccount":["int deleteSambaAccount(String username);", "int", "String username"],
+            "deleteAllSambaAccount":["int deleteAllSambaAccount();", "int", ""],
+            "setHTTPUserPassword":["int setHTTPUserPassword(String password);", "int", "String password"]
+        },
+        "DeviceRsetService":{
+            "reset":["int reset();", "int", ""]
+        },
+        "UsbService":{
+            "usbRegister":["int usbRegister(BundleContext context, int devTypes);", "int", "BundleContext context, int devTypes"],
+            "usbUnregister":["int usbUnregister(BundleContext context);", "int", "BundleContext context"],
+            "usbLock":["int usbLock(int devId);", "int", "int devId"],
+            "usbUnlock":["int usbUnlock(int devId);", "int", "int devId"],
+            "usbOpen":["int usbOpen(int devId);", "int", "int devId"],
+            "usbDataAvailable":["int usbDataAvailable(int handle);", "int", "int handle"],
+            "usbRead":["int usbRead(int handle, byte[] buf, int offset, int count, int timeout);", "int", "int handle, byte[] buf, int offset, int count, int timeout"],
+            "usbWrite":["int usbWrite(int handle, byte[] buf, int offset, int count);", "int", "int handle, byte[] buf, int offset, int count"],
+            "usbSetSerial":["int usbSetSerial(int handle, int bandRate, int parity, int dataBits, int stopBits, boolean hwFlowCtrl, boolean swFlowCtl);", "int", "int handle, int bandRate, int parity, int dataBits, int stopBits, boolean hwFlowCtrl, boolean swFlowCtl"],
+            "usbClose":["int usbClose(int handle);", "int", "int handle"],
+            "getStorageInfo":["String getStorageInfo();", "String", ""]
+        },
+        "DeviceConfigService":{
+            "setLedSwitch":["int setLedSwitch(boolean enableState);","int","boolean enableState"]
+        }
+    }
+}
