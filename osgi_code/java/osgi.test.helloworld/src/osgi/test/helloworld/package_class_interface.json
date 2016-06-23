@@ -42,8 +42,8 @@
         },
         "StaticLayer3ForwardingConfigService":{
             "addLayer3ForwardingStatic":["int addLayer3ForwardingStatic(String DestIPAddress, String DestSubnetMask, String GatewayIPAddress, String Interface);", "int", "String DestIPAddress, String DestSubnetMask, String GatewayIPAddress, String Interface"],
-            "deleteLayer3ForwardingStatic":["int deleteLayer3ForwardingStatic(String DestIPPrefix, String NextHop, String Interface);", "int", "String DestIPPrefix, String NextHop, String Interface"],
-            "addIPv6Layer3ForwardingStatic":["int addIPv6Layer3ForwardingStatic(int index);", "int", "int index"],
+            "addIPv6Layer3ForwardingStatic":["int addIPv6Layer3ForwardingStatic(String DestIPPrefix, String NextHop, String Interface);", "int", "String DestIPPrefix, String NextHop, String Interface"],
+            "deleteLayer3ForwardingStatic":["int deleteLayer3ForwardingStatic(int index);", "int", "int index"],
             "deleteIPv6Layer3ForwardingStatic":["int deleteIPv6Layer3ForwardingStatic(int index);", "int", "int index"]
         },
         "TrafficMonitoringConfigService":{
@@ -106,7 +106,7 @@
             "setMacFilterMode":["int setMacFilterMode(int mode);", "int", "int mode"],
             "addLANHostToBlackList":["int addLANHostToBlackList(String[] hostMAC);", "int", "String[] hostMAC"],
             "deleteLANHostFromBlackList":["int deleteLANHostFromBlackList(String[] hostMAC);", "int", "String[] hostMAC"],
-            "addLANHostToStorageBlackList":["int addLANHostToStorageBlackList(String hostMAC);", "int", "String hostMAC"],
+            "addLANHostToStorageBlackList":["int addLANHostToStorageBlackList(String[] hostMAC);", "int", "String[] hostMAC"],
             "deleteLANHostFromStorageBlackList":["int deleteLANHostFromStorageBlackList(String[] hostMAC);", "int", "String[] hostMAC"],
             "addLANHostToTrustList":["int addLANHostToTrustList(String[] hostMAC);", "int", "String[] hostMAC"],
             "deleteLANHostFromTrustList":["int deleteLANHostFromTrustList(String[] hostMAC);", "int", "String[] hostMAC"]
