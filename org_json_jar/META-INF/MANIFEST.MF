@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1392417297207
+Build-Jdk: 1.7.0_51
+Built-By: rain
+Bundle-Description: Reference implementation re-packaged to work with OS
+ Gi
+Bundle-License: http://json.org/license.html
+Bundle-ManifestVersion: 2
+Bundle-Name: JSON in Java
+Bundle-SymbolicName: json
+Bundle-Version: 1.0.0.v20160729
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.json.zip;uses:="org.json";version="1.0.0.v20160729"
+Tool: Bnd-2.1.0.20130426-122213
